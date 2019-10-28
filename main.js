@@ -12,9 +12,17 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
-    return {
-        name: name,
-        salary: salary
+     
+        var employee ={};
+        employee.name= name;
+        employee.salary= salary;
+    //    var name = name;
+    //    var salary = salary;
+
+return { employee 
+    , sayMyName: function (){
+       return employee.name;
+      }
     }
 }
 
@@ -25,17 +33,54 @@ var employeeC = employee("Sara", 150);
 
 //create a function when invoked returns the name of that employee.
 
+
+//function sayMyName(employ){
+ //   return employ.name;
+
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
 
 
 //now modify that closure and add a function that says hello to the employee name;
+function employee(name, salary) {
+     
+        var employee ={};
+        employee.name= name;
+        employee.salary= salary;
+    //    var name = name;
+    //    var salary = salary;
+
+return { employee 
+    , sayMyName: function (){
+       return "heloo " + employee.name;
+      }
+    }
+}
 
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
 
 //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
 //employeeA.increaseSalary(50); // "your salary is 150$"
+
+function employee(name, salary) {
+     
+        var employee ={};
+        employee.name= name;
+        employee.salary= salary;
+    //    var name = name;
+    //    var salary = salary;
+
+return { employee 
+    , sayMyName: function (){
+       return "heloo "+employee.name;
+      },increaseSalary: function(n){
+        employee.salary += n;
+        return "your salary is " + employee.salary;
+
+      }
+    }
+}
 
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
@@ -47,6 +92,27 @@ var employeeC = employee("Sara", 150);
 
 // employeeA.listFriends(); // "you have 2 friends"
 
+function employee(name, salary) {
+     
+        var employee ={};
+        employee.name= name;
+        employee.salary= salary;
+    //    var name = name;
+    //    var salary = salary;
+
+return { employee 
+    , sayMyName: function (){
+       return "heloo "+employee.name;
+      },increaseSalary: function(n){
+        employee.salary += n;
+        return "your salary is " + employee.salary;
+
+      },addFriend: function(friendName){
+        var friends = {};
+        friends.listFriends = friendName.name; 
+      }
+    }
+}
 
 //=============================================================================
 /*                                  Q2                                       */
@@ -56,23 +122,56 @@ var employeeC = employee("Sara", 150);
 
 // var pet1 = Pet("doggy");
 
+function Pet(name) {
+    var pet ={};
+    pet.name = name;
+    pet.age;
+    pet.owner;
+    pet.species;
+    pet.addInfo = addInfo;
+    pet.ageIncrese = ageIncrese;
+    pet.state;
+    pet.changeState = changeState;
+    return pet;
+}
+
 // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
 
 // pet1.addInfo(age, owner, gender, species);
+var addInfo = function (age, owner, gender, species){
+             this.age = age;
+             this.owner = owner;
+             this.gender = gender;
+             this.species= species;
 
+}
 // c- create another function to increase the pet age by n value.
-
+var ageIncrese = function(n) {
+    this.age += n;
+}
 // d - create a variable called availability with the default state as false, then create another function to check the pet state, returns true if the pet is available and false if it's not
+var availability= function (){
+    this.state = false;
+}
+
+var availability= function (){
+    return this.state;
+}
 
 // f- in order to change the state of the pet, create a function called changeState, when called it will make the pet avaliablity true,
 //    and when called again it will make it false.
-
+var changeState = function (){
+    if (this.state = true;){
+        this.state = false;
+    }
+     this.state = true;
+}
 
 // Write your code here .....
 
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
-
+yes I am
 //=============================================================================
 /*                                  Q3                                       */
 //=============================================================================
